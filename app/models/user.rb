@@ -9,4 +9,13 @@ class User < ApplicationRecord
             friend.user_id_1 == self.id || friend.user_id_2 == self.id 
         end 
     end 
+
+    # def login
+    #     user = User.find_by(email: params[:email])
+    #     if (user) {
+
+    #     } else {
+
+    #     }
+    # end
 end
