@@ -1,9 +1,7 @@
 class PostsController < ApplicationController
     def index
         posts = Post.all 
-        render json: posts.to_json(:include => {
-        :comments => {:only => [:content, :user_id, :id, :post_id]}
-        }, except: [:created_at, :updated_at]) 
+        render json: posts.to_json
     end
     
     def new
