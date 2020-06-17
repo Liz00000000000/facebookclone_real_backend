@@ -7,12 +7,13 @@ class LikesController < ApplicationController
         Like.new 
     end 
     def create 
-        Like.create(comment_params)
+        like = Like.create(like_params)
+        render json: like.to_json
     end 
 
     private 
 
-    def comment_params
+    def like_params
         params.require(:like).permit(:user_id, :post_id)
     end 
 end
