@@ -8,7 +8,8 @@ class RepliesController < ApplicationController
         Reply.new 
     end 
     def create 
-        Reply.create(reply_params)
+       reply = Reply.create(reply_params)
+       render json: reply.to_json
     end 
 
     def destroy

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
     def index
         posts = Post.all 
         render json: posts.to_json(:include => {
-        :comments => {:only => [:content, :user_id, :id]}
+        :comments => {:only => [:content, :user_id, :id, :post_id]}
         }, except: [:created_at, :updated_at]) 
     end
     
@@ -41,6 +41,6 @@ class PostsController < ApplicationController
     private 
 
     def user_params 
-        params.require(:post).permit(:content, :user_id, :img_url)
+        params.require(:post).permit(:caption, :user_id, :img_url)
     end 
 end
