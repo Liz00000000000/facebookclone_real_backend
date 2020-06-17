@@ -19,8 +19,11 @@ end
 Like.create(user_id: User.all.sample.id, post_id: Post.all.sample.id ) 
 end 
 
-200.times do 
+500.times do 
 Comment.create(user_id: User.all.sample.id, post_id: Post.all.sample.id, content: Faker::TvShows::GameOfThrones.quote )
+end 
+
+200.times do 
 Reply.create(comment_id: Comment.all.sample.id , content: Faker::Games::WarhammerFantasy.quote, user_id: User.all.sample.id )
 end 
 

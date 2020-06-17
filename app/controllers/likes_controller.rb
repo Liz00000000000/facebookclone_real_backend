@@ -7,7 +7,7 @@ class LikesController < ApplicationController
         Like.new 
     end 
     def create 
-        like = Like.create(like_params)
+        like = Like.create(comment_params)
         render json: like.to_json
     end 
 

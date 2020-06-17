@@ -7,7 +7,8 @@ class FriendsController < ApplicationController
         Friend.new 
     end 
     def create 
-        Friend.create(comment_params)
+        friend = Friend.create(comment_params)
+        render json: friend.to_json
     end 
 
     def destroy
