@@ -15,7 +15,7 @@ end
 Post.create(caption: Faker::GreekPhilosophers.quote, user_id: User.all.sample.id, date: Faker::Date.forward(days: 23) )
 end 
 
-90.times do 
+110.times do 
 Like.create(user_id: User.all.sample.id, post_id: Post.all.sample.id ) 
 end 
 
